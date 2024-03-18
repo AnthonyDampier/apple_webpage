@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/NavBar';
+import Hero from './components/Hero';
+import Highlights from './components/Highlights';
+import Model from './components/Model';
+import Features from './components/Features';
+import HowItWorks from './components/HowItWorks';
+import Footer from './components/Footer';
 
-function App() {
+import * as Sentry from '@sentry/react';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className="bg-black">
+      <Navbar />
+      <Hero />
+      <Highlights />
+      <Model />
+      <Features />
+      <HowItWorks />
+      <Footer />
+    </main>
+  )
 }
 
-export default App;
+export default Sentry.withProfiler(App);
